@@ -85,6 +85,17 @@ if(!isset($_GET['id'])){
     .receive {
         text-align: left
     }
+    #online{
+        background-color: green;
+        color: white;
+    }
+    #offline{
+        background-color: red;
+        color: white;
+    }
+    #tpointer{
+        cursor: pointer;
+    }
 </style>
 
 <body>
@@ -94,7 +105,9 @@ if(!isset($_GET['id'])){
 <p class="source-content">源码请访问<a href="https://github.com/zmisgod/SimpleChatOnline">Github</a></p>
 <p class="source-content">默认id为 838881690 为管理员权限</p>
 <div class="demo">
+
     <div class="main">
+        <p>You are <span id="online">Online</span> Now!</p>
         <div>
             <textarea rows="3" cols="" id="content" placeholder="<?php if($isAdmin): ?>What do you want to broadcast<?php else: ?>What do you want to send<?php endif; ?>"></textarea>
         </div>
@@ -117,41 +130,47 @@ if(!isset($_GET['id'])){
 </div>
 </body>
 <script type="text/javascript">
-    // 创建一个Socket实例
-    var socket = new WebSocket('ws://localhost:9502?id=<?php echo $_GET['id']; ?>');
+    var socket = new WebSocket('ws://localhost:9502?id=<?php echo $_GET['id']; ?>')
     // 打开Socket
     socket.onopen = function(event) {};
     //收到信息
     socket.onmessage = function(event) {
-        var data = JSON.parse(event.data);
-        var list = document.getElementById("lists");
+        var data = JSON.parse(event.data)
+        var list = document.getElementById("lists")
         var toidObj = document.getElementById("toid")
         var toid = toidObj.value
         //添加 li
 
         var li = document.createElement("li");
         li.setAttribute('class', 'receive')
-        li.innerHTML = data.content;
-        list.appendChild(li);
+        li.innerHTML = data.content
+        list.appendChild(li)
     };
     //关闭连接通知
     socket.onclose = function(event) {
-        console.log('Client has closed.\n');
+        var obj = document.getElementById('online')
+        obj.innerHTML = 'offline <a id="tpointer" onclick="tryAgain()">click me to try again</a>'
+        obj.setAttribute('id', 'Offline')
     };
+
+    function tryAgain() {
+        history.go(0);
+    }
+
     //发送消息
     function sendMessage() {
-        var obj = document.getElementById('content');
-        var content = obj.value;
+        var obj = document.getElementById('content')
+        var content = obj.value
         var toidObj = document.getElementById("toid")
         var toid = toidObj.value
-        socket.send('{"toid": "' + toid + '", "content": "' + content + '"}');
-        var list = document.getElementById("lists");
+        socket.send('{"toid": "' + toid + '", "content": "' + content + '"}')
+        var list = document.getElementById("lists")
         //添加 li
-        var li = document.createElement("li");
+        var li = document.createElement("li")
         li.setAttribute('class', 'send')
-        li.innerHTML = content;
-        list.appendChild(li);
-        document.getElementById("content").value = "";
+        li.innerHTML = content
+        list.appendChild(li)
+        document.getElementById("content").value = ""
     }
 </script>
 
