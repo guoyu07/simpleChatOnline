@@ -49,26 +49,29 @@ class WebsocketServer
         if (!empty($server)) {
             $result = json_decode($frame->data, true);
             if(self::$uidInfo[$this->getUid($frame->fd)]['role'] == 'admin') {
+                $i = 0;
                 foreach (self::$uid as $v) {
                     if($v != $frame->fd) {
-                        $server->push($v, json_encode(['toid' => 'system', 'content'=> 'System Broadcast: '.$result['content']]));
+                        $i++;
+                        $server->push($v, json_encode(['toid' => 'system', 'content'=> '[System Broadcast]: '.$result['content']]));
                     }
                 }
-                $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '广播发送成功']));
+                $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '[System]: 广播发送成功, 成功广播到'.$i.'个用户']));
             }else{
                 //根据前端传递的toid获取要发送到此toid绑定的fd
                 $sendToFd = isset(self::$uid[$result['toid']]) ? self::$uid[$result['toid']] : false;
                 if($sendToFd === false) {
-                    $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '对方不在线，请重试']));
+                    $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '[System]: 对方不在线，请重试']));
                 }else{
                     if($sendToFd == $frame->fd) {
-                        $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '不能给自己发送消息哦！']));
+                        $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '[System]: 不能给自己发送消息哦！']));
                     }else{
                         if($result['content']) {
                             //发送到此toid的fd中
-                            $server->push($sendToFd, json_encode(['toid' => 'id = '. $this->getUid($frame->fd), 'content' => $result['content']]));
+                            $uid = $this->getUid($frame->fd);
+                            $server->push($sendToFd, json_encode(['toid' => 'id = '. $uid, 'content' => 'UserId : '.$uid.$result['content']]));
                         }else{
-                            $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '发送不能为空']));
+                            $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '[System]: 发送信息不能为空']));
                         }
                     }
                 }
