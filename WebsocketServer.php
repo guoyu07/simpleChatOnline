@@ -39,41 +39,52 @@ class WebsocketServer
 
     public function onOpen($server, $req)
     {
-        //先绑定uid与fd
-        $this->bindUid(['id' => $req->get['id'], 'name' => ''], $req->fd);
-        $this->showData();
+        //判断是否为统计数据的链接
+        if(isset($req->get['type']) && $req->get['type'] == 'count') {
+            echo 'show count';
+        }else{
+            //先绑定uid与fd
+            $this->bindUid(['id' => $req->get['id'], 'name' => ''], $req->fd);
+            $this->showData();
+        }
     }
 
     public function onMessage($server, $frame)
     {
         if (!empty($server)) {
             $result = json_decode($frame->data, true);
-            if(self::$uidInfo[$this->getUid($frame->fd)]['role'] == 'admin') {
-                $i = 0;
-                foreach (self::$uid as $v) {
-                    if($v != $frame->fd) {
-                        $i++;
-                        $server->push($v, json_encode(['toid' => 'system', 'content'=> '[System Broadcast]: '.$result['content']]));
-                    }
-                }
-                $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '[System]: 广播发送成功, 成功广播到'.$i.'个用户']));
-            }else{
-                //根据前端传递的toid获取要发送到此toid绑定的fd
-                $sendToFd = isset(self::$uid[$result['toid']]) ? self::$uid[$result['toid']] : false;
-                if($sendToFd === false) {
-                    $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '[System]: 对方不在线，请重试']));
-                }else{
-                    if($sendToFd == $frame->fd) {
-                        $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '[System]: 不能给自己发送消息哦！']));
-                    }else{
-                        if($result['content']) {
-                            //发送到此toid的fd中
-                            $uid = $this->getUid($frame->fd);
-                            $server->push($sendToFd, json_encode(['toid' => 'id = '. $uid, 'content' => 'UserId : '.$uid.$result['content']]));
-                        }else{
-                            $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '[System]: 发送信息不能为空']));
+            if(isset($result['type'])) {
+                if($result['type'] == 'chat') {
+                    if(self::$uidInfo[$this->getUid($frame->fd)]['role'] == 'admin') {
+                        $i = 0;
+                        foreach (self::$uid as $v) {
+                            if($v != $frame->fd) {
+                                $i++;
+                                $server->push($v, json_encode(['toid' => 'system', 'content'=> '[System Broadcast]: '.$result['content']]));
+                            }
+                        }
+                        $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '[System]: 广播发送成功, 成功广播到'.$i.'个用户']));
+                    }else {
+                        //根据前端传递的toid获取要发送到此toid绑定的fd
+                        $sendToFd = isset(self::$uid[$result['toid']]) ? self::$uid[$result['toid']] : false;
+                        if ($sendToFd === false) {
+                            $server->push($frame->fd, json_encode(['toid' => 'system', 'content' => '[System]: 对方不在线，请重试']));
+                        } else {
+                            if ($sendToFd == $frame->fd) {
+                                $server->push($frame->fd, json_encode(['toid' => 'system', 'content' => '[System]: 不能给自己发送消息哦！']));
+                            } else {
+                                if ($result['content']) {
+                                    //发送到此toid的fd中
+                                    $uid = $this->getUid($frame->fd);
+                                    $server->push($sendToFd, json_encode(['toid' => 'id = ' . $uid, 'content' =>  $uid .': ' . $result['content']]));
+                                } else {
+                                    $server->push($frame->fd, json_encode(['toid' => 'system', 'content' => '[System]: 发送信息不能为空']));
+                                }
+                            }
                         }
                     }
+                }elseif ($result['type'] == 'count') {
+                    $server->push($frame->fd, json_encode(['toid' => 'system', 'content' => array_values(array_keys(self::$uid))]));
                 }
             }
         }

@@ -1,9 +1,9 @@
 <?php
-if(!isset($_GET['id'])){
+if (!isset($_GET['id'])) {
     die('请在传参出输入id=xxxxxx, xxxx为数字，如localhost/?id=838881690');
-}else{
+} else {
     $isAdmin = false;
-    if($_GET['id'] == '838881690') {
+    if ($_GET['id'] == '838881690') {
         $isAdmin = true;
     }
 }
@@ -15,6 +15,7 @@ if(!isset($_GET['id'])){
 </head>
 <style>
     body {
+        display: flex;
         margin: 0;
         padding: 0;
         font-family: 'HanHei SC', 'PingFang SC', 'CenturyGothic', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'SimHei', 'Arial', sans-serif;
@@ -32,8 +33,10 @@ if(!isset($_GET['id'])){
     }
 
     .demo {
+        display: flex;
         width: 100%;
         height: 100%;
+        flex-direction: column;
         box-shadow: 2px 2px 2px #888888;
     }
 
@@ -85,35 +88,43 @@ if(!isset($_GET['id'])){
     .receive {
         text-align: left
     }
-    #online{
+
+    #online {
         background-color: green;
         color: white;
     }
-    #offline{
+
+    #offline {
         background-color: red;
         color: white;
     }
-    #tpointer{
+
+    #tpointer {
         cursor: pointer;
+    }
+
+    .peoplelists {
+        display: flex;
     }
 </style>
 
 <body>
-<h1 class="main-header">
-    欢迎使用PHP+SWOOLE+SOCKET的SimpleChatOnline测试平台
-</h1>
-<p class="source-content">源码请访问<a href="https://github.com/zmisgod/SimpleChatOnline">Github</a></p>
-<p class="source-content">默认id为 838881690 为管理员权限</p>
-<div class="demo">
 
+<div class="demo">
+    <h1 class="main-header">
+        欢迎使用PHP+SWOOLE+SOCKET的SimpleChatOnline测试平台
+    </h1>
+    <p class="source-content">源码请访问<a href="https://github.com/zmisgod/SimpleChatOnline">Github</a></p>
+    <p class="source-content">默认id为 838881690 为管理员权限</p>
     <div class="main">
         <p>You are <span id="online">Online</span> Now!</p>
         <div>
-            <textarea rows="3" cols="" id="content" placeholder="<?php if($isAdmin): ?>What do you want to broadcast<?php else: ?>What do you want to send<?php endif; ?>"></textarea>
+            <textarea rows="3" cols="" id="content"
+                      placeholder="<?php if ($isAdmin): ?>What do you want to broadcast<?php else: ?>What do you want to send<?php endif; ?>"></textarea>
         </div>
 
         <div>
-            <?php if($isAdmin): ?>
+            <?php if ($isAdmin): ?>
                 <input type="hidden" value="" id="toid">
             <?php else: ?>
                 <input type="text" value="" id="toid" placeholder="to id">
@@ -128,13 +139,19 @@ if(!isset($_GET['id'])){
         </ul>
     </div>
 </div>
+<div class="peoplelists">
+    <ul id="peopleullists">
+
+    </ul>
+</div>
 </body>
 <script type="text/javascript">
-    var socket = new WebSocket('ws://localhost:9502?id=<?php echo $_GET['id']; ?>')
+    var socket = new WebSocket('ws://localhost:9502?id=<?php echo $_GET['id']; ?>&type=chat')
     // 打开Socket
-    socket.onopen = function(event) {};
+    socket.onopen = function (event) {
+    };
     //收到信息
-    socket.onmessage = function(event) {
+    socket.onmessage = function (event) {
         var data = JSON.parse(event.data)
         var list = document.getElementById("lists")
         var toidObj = document.getElementById("toid")
@@ -147,7 +164,7 @@ if(!isset($_GET['id'])){
         list.appendChild(li)
     };
     //关闭连接通知
-    socket.onclose = function(event) {
+    socket.onclose = function (event) {
         var obj = document.getElementById('online')
         obj.innerHTML = 'offline <a id="tpointer" onclick="tryAgain()">click me to try again</a>'
         obj.setAttribute('id', 'Offline')
@@ -163,7 +180,7 @@ if(!isset($_GET['id'])){
         var content = obj.value
         var toidObj = document.getElementById("toid")
         var toid = toidObj.value
-        socket.send('{"toid": "' + toid + '", "content": "' + content + '"}')
+        socket.send('{"toid": "' + toid + '", "content": "' + content + '", "type": "chat"}')
         var list = document.getElementById("lists")
         //添加 li
         var li = document.createElement("li")
@@ -172,6 +189,26 @@ if(!isset($_GET['id'])){
         list.appendChild(li)
         document.getElementById("content").value = ""
     }
+</script>
+
+<script>
+    var sockets = new WebSocket('ws://localhost:9502?type=count')
+    // 打开Socket
+    sockets.onopen = function (event) {};
+    //收到信息
+    sockets.onmessage = function (event) {
+        var data = JSON.parse(event.data)
+        var content = data.content
+        var list = document.getElementById("peopleullists")
+        var li = ''
+        for(var  i = 0 ; i < content.length; i++){
+            li += '<li>'+ content[i] +'</li>';
+        }
+        list.innerHTML = li
+    };
+    setInterval(function () {
+        sockets.send('{"type": "count"}')
+    }, 10000);
 </script>
 
 </html>
