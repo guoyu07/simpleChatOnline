@@ -3,6 +3,8 @@ PHP + Swoole + Websocket demo
 
 ## 介绍
 本次是我用swoole自己写的一个在线聊天的功能，我将慢慢完善功能。
+<a href="http://im.zmis.me">在线演示地址</a>
+
 
 ## 环境
 1. PHP
