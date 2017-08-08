@@ -1,5 +1,4 @@
 <?php
-
 class WebsocketServer
 {
     private $_server;
@@ -12,16 +11,17 @@ class WebsocketServer
 
     private $admin = false;
 
+    private $config = [];
+
     public static $message = [];
 
     public function __construct()
     {
-        $this->_server = new Swoole\Websocket\Server("127.0.0.1", 9502);
-        $this->_server->set([
-            'worker_num' => 1, //worker进程设置为1，这样就能将fd与用户id进行唯一绑定，不然多进程下无法判断用户是否绑定
-            'heartbeat_check_interval' => 60,
-            'heartbeat_idle_time' => 125
-        ]);
+        require_once __DIR__.'/config.php';
+        $this->config = $config;
+
+        $this->_server = new Swoole\Websocket\Server($this->config['base']['host'], $this->config['base']['port']);
+        $this->_server->set($this->config['swoole']);
 
         $this->_server->on('Open', [$this, 'onOpen']);
 
@@ -135,8 +135,8 @@ class WebsocketServer
 
     public function checkAdmin($userId)
     {
-        if($userId == '838881690') {
-            echo '管理员: 838881690登录 '.PHP_EOL;
+        if($userId == $this->config['manage']['adminID']) {
+            echo '管理员: '.$this->config['manage']['adminID'].'登录 '.PHP_EOL;
             return 'admin';
         }
         return 'user';

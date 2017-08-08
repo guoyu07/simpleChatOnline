@@ -1,9 +1,10 @@
 <?php
+require_once __DIR__."/config.php";
 if (!isset($_GET['id'])) {
-    die('请在传参出输入id=xxxxxx, xxxx为数字，如localhost/?id=838881690');
+    die('请在传参出输入id=xxxxxx, xxxx为数字，如localhost/?id='.$config['manage']['adminID']);
 } else {
     $isAdmin = false;
-    if ($_GET['id'] == '838881690') {
+    if ($_GET['id'] == $config['manage']['adminID']) {
         $isAdmin = true;
     }
 }
@@ -115,7 +116,7 @@ if (!isset($_GET['id'])) {
         欢迎使用PHP+SWOOLE+SOCKET的SimpleChatOnline测试平台
     </h1>
     <p class="source-content">源码请访问<a href="https://github.com/zmisgod/SimpleChatOnline">Github</a></p>
-    <p class="source-content">默认id为 838881690 为管理员权限</p>
+    <p class="source-content">默认id为 <?php echo $config['manage']['adminID']; ?> 为管理员权限</p>
     <div class="main">
         <p>You are <span id="online">Online</span> Now!</p>
         <div>
@@ -146,7 +147,7 @@ if (!isset($_GET['id'])) {
 </div>
 </body>
 <script type="text/javascript">
-    var socket = new WebSocket('ws://localhost:9502?id=<?php echo $_GET['id']; ?>&type=chat')
+    var socket = new WebSocket('ws://<?php echo $config['base']['host']; ?>:<?php echo $config['base']['port']; ?>?id=<?php echo $_GET['id']; ?>&type=chat')
     // 打开Socket
     socket.onopen = function (event) {
     };
@@ -192,7 +193,7 @@ if (!isset($_GET['id'])) {
 </script>
 
 <script>
-    var sockets = new WebSocket('ws://localhost:9502?type=count')
+    var sockets = new WebSocket('ws://<?php echo $config['base']['host']; ?>:<?php echo $config['base']['port']; ?>?type=count')
     // 打开Socket
     sockets.onopen = function (event) {};
     //收到信息
