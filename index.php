@@ -1,7 +1,19 @@
 <?php
 require_once __DIR__."/config.php";
 if (!isset($_GET['id'])) {
-    die('请在传参出输入id=xxxxxx, xxxx为数字，如localhost/?id='.$config['manage']['adminID']);
+?>
+    <input type="number" placeholder="您的QQ号码" id = "qq">
+    <button onclick="qqGo()">确定!</button>
+    <script>
+        function qqGo() {
+            var qq = document.getElementById("qq")
+            if(qq.value !== undefined || qq.value !==  0 || qq.value !== '') {
+                location.href= '?id='+ qq.value
+            }
+        }
+    </script>
+<?php
+die;
 } else {
     $isAdmin = false;
     if ($_GET['id'] == $config['manage']['adminID']) {
