@@ -130,6 +130,14 @@
         display: flex;
         padding:0 5px;
     }
+    #home{
+        margin-top: 20px;
+        text-align: center;
+    }
+    #qq{
+        text-align: center;
+        margin-right: 10px;
+    }
 </style>
 
 <body>
@@ -137,8 +145,10 @@
 require_once __DIR__."/config.php";
 if (!isset($_GET['id'])) {
     ?>
-    <input type="number" placeholder="您的QQ号码" id = "qq">
-    <button onclick="qqGo()">确定!</button>
+    <div id="home">
+        <input type="number" placeholder="您的QQ号码" id = "qq">
+        <button onclick="qqGo()">确定!</button>
+    </div>
     <script>
         function qqGo() {
             var qq = document.getElementById("qq")
