@@ -1,43 +1,15 @@
-<?php
-require_once __DIR__."/config.php";
-if (!isset($_GET['id'])) {
-?>
-    <input type="number" placeholder="您的QQ号码" id = "qq">
-    <button onclick="qqGo()">确定!</button>
-    <script>
-        function qqGo() {
-            var qq = document.getElementById("qq")
-            if(qq.value !== undefined || qq.value !==  0 || qq.value !== '') {
-                location.href= '?id='+ qq.value
-            }
-        }
-    </script>
-<?php
-die;
-} else {
-    $isAdmin = false;
-    if ($_GET['id'] == $config['manage']['adminID']) {
-        $isAdmin = true;
-    }
-}
-?>
 <html>
 
 <head>
+    <title>IM - zmis.me官网</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
     body {
-        display: flex;
         margin: 0;
         padding: 0;
         font-family: 'HanHei SC', 'PingFang SC', 'CenturyGothic', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'SimHei', 'Arial', sans-serif;
-    }
-
-    .main-header {
-        padding-top: 50px;
-        font-size: 18px;
-        text-align: center
     }
 
     .source-content {
@@ -46,26 +18,67 @@ die;
     }
 
     .demo {
-        display: flex;
+        display: block;
         width: 100%;
-        height: 100%;
+        height: auto;
+        float: left;
         flex-direction: column;
         box-shadow: 2px 2px 2px #888888;
-    }
-
-    .main {
-        width: 600px;
-        margin: 0 auto;
     }
 
     .main div {
         padding-top: 5px;
     }
 
-    #content {
-        border: none;
-        width: 600px;
-        height: auto;
+
+    @media all and (max-width: 766px) {
+        .main {
+            text-align: center;
+            width: auto;
+            margin: 0 auto;
+        }
+        #content {
+            border: none;
+            width: auto;
+            height: auto;
+        }
+        #lists {
+            height: 250px;
+            overflow-y: scroll;
+            padding: 15px;
+            text-align: left;
+        }
+        .main-header {
+            padding-top: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+        p{
+            margin: 0 3px;
+        }
+    }
+
+    @media all and (min-width: 767px) {
+        #content {
+            border: none;
+            width: 500px;
+            height: auto;
+        }
+        .main {
+            width: 600px;
+            margin: 0 auto;
+        }
+        #lists {
+            height: 400px;
+            overflow-y: scroll;
+            padding: 15px;
+            text-align: left;
+        }
+        .main-header {
+            padding-top: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
     }
 
     textarea,
@@ -88,10 +101,6 @@ die;
 
     ul li {
         list-style: none
-    }
-
-    .lists {
-        text-align: left
     }
 
     .send {
@@ -117,15 +126,39 @@ die;
     }
 
     .peoplelists {
+        float: left;
         display: flex;
+        padding:0 5px;
     }
 </style>
 
 <body>
-
+<?php
+require_once __DIR__."/config.php";
+if (!isset($_GET['id'])) {
+    ?>
+    <input type="number" placeholder="您的QQ号码" id = "qq">
+    <button onclick="qqGo()">确定!</button>
+    <script>
+        function qqGo() {
+            var qq = document.getElementById("qq")
+            if(qq.value !== undefined || qq.value !==  0 || qq.value !== '') {
+                location.href= '?id='+ qq.value
+            }
+        }
+    </script>
+    <?php
+    die;
+} else {
+    $isAdmin = false;
+    if ($_GET['id'] == $config['manage']['adminID']) {
+        $isAdmin = true;
+    }
+}
+?>
 <div class="demo">
     <h1 class="main-header">
-        欢迎使用PHP+SWOOLE+SOCKET的SimpleChatOnline测试平台
+        欢迎使用PHP + Swoole + Websocket 的SimpleChatOnline测试平台
     </h1>
     <p class="source-content">源码请访问<a href="https://github.com/zmisgod/SimpleChatOnline">Github</a></p>
     <p class="source-content">默认id为 <?php echo $config['manage']['adminID']; ?> 为管理员权限</p>
@@ -147,12 +180,14 @@ die;
             <button onclick="sendMessage()">发送</button>
         </div>
 
+        <p>发送列表：</p>
         <ul id="lists">
-            <p>发送列表：</p>
+
         </ul>
     </div>
 </div>
 <div class="peoplelists">
+    <a>在线列表</a>
     <ul id="peopleullists">
 
     </ul>
