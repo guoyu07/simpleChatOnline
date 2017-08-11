@@ -143,7 +143,7 @@
 <body>
 <?php
 require_once __DIR__."/config.php";
-if (!isset($_GET['id'])) {
+if (!isset($_GET['id']) || empty($_GET['id']) || empty((int)$_GET['id']) ) {
     ?>
     <div id="home">
         <input type="number" placeholder="您的QQ号码" id = "qq">
@@ -171,7 +171,11 @@ if (!isset($_GET['id'])) {
         欢迎使用PHP + Swoole + Websocket 的SimpleChatOnline测试平台
     </h1>
     <p class="source-content">源码请访问<a href="https://github.com/zmisgod/SimpleChatOnline">Github</a></p>
-    <p class="source-content">默认id为 <?php echo $config['manage']['adminID']; ?> 为管理员权限</p>
+    <?php if($isAdmin): ?>
+        <p class="source-content">管理员，您好</p>
+    <?php else: ?>
+        <p class="source-content">欢迎您，用户ID = "<?php echo $_GET['id']; ?>"</p>
+    <?php endif; ?>
     <div class="main">
         <p>You are <span id="online">Online</span> Now!</p>
         <div>
