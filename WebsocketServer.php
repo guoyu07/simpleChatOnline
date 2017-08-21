@@ -32,11 +32,20 @@ class WebsocketServer
         $this->_server->start();
     }
 
+    /**
+     * 显示在线人数
+     */
     public function showData()
     {
         echo '当前在线人数: '.count(self::$uid).PHP_EOL;
     }
 
+    /**
+     * 连接
+     *
+     * @param $server
+     * @param $req
+     */
     public function onOpen($server, $req)
     {
         //判断是否为统计数据的链接
@@ -51,6 +60,11 @@ class WebsocketServer
         }
     }
 
+    /**
+     * error code
+     *
+     * @var array
+     */
     public static $error_no = [
         0 => 'OK',
         1 => 'Bind id is online now',
@@ -66,16 +80,16 @@ class WebsocketServer
      *
      * @param $server
      * @param $fd
-     * @param $toId
+     * @param $fromId
      * @param $message
      * @param int $errorCode
      * @return mixed
      */
-    public function sendToFd($server, $fd, $toId, $message, $errorCode = 0)
+    public function sendToFd($server, $fd, $fromId, $message, $errorCode = 0)
     {
         return $server->push($fd, json_encode(
             [
-                'toid' => $toId,
+                'toid' => $fromId,
                 'content' => $message,
                 'code' => $errorCode,
                 'msg' => self::$error_no[$errorCode],
@@ -142,6 +156,12 @@ class WebsocketServer
         }
     }
 
+    /**
+     * 关闭操作
+     *
+     * @param $server
+     * @param $fd
+     */
     public function onClose($server, $fd)
     {
         //当断开连接时，取消fd与此uid的绑定，并将uid绑定的fd取消
