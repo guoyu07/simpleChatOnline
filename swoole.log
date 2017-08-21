@@ -1,0 +1,45 @@
+user :  closed
+当前在线人数: 0
+user :  closed
+当前在线人数: 0
+管理员: 838881690登录 
+当前在线人数: 1
+show count管理员: 838881690登录 
+当前在线人数: 1
+show countuser : 838881690 closed
+当前在线人数: 0
+user :  closed
+当前在线人数: 0
+管理员: 838881690登录 
+当前在线人数: 1
+show countuser :  closed
+当前在线人数: 1
+user :  closed
+当前在线人数: 1
+user :  closed
+当前在线人数: 1
+user : 838881690 closed
+当前在线人数: 0
+管理员: 838881690登录 
+当前在线人数: 1
+show count管理员: 838881690登录 
+当前在线人数: 1
+show countPHP Notice:  Undefined offset: 0 in /Users/tingping/myweb/SimpleChatOnline/WebsocketServer.php on line 122
+PHP Stack trace:
+PHP   1. {main}() /Users/tingping/myweb/SimpleChatOnline/WebsocketServer.php:0
+PHP   2. WebsocketServer->__construct() /Users/tingping/myweb/SimpleChatOnline/WebsocketServer.php:202
+PHP   3. swoole_websocket_server->start() /Users/tingping/myweb/SimpleChatOnline/WebsocketServer.php:32
+PHP   4. WebsocketServer->onMessage() /Users/tingping/myweb/SimpleChatOnline/WebsocketServer.php:32
+
+Notice: Undefined offset: 0 in /Users/tingping/myweb/SimpleChatOnline/WebsocketServer.php on line 122
+
+Call Stack:
+    0.0010     385824   1. {main}() /Users/tingping/myweb/SimpleChatOnline/WebsocketServer.php:0
+    0.0023     385936   2. WebsocketServer->__construct() /Users/tingping/myweb/SimpleChatOnline/WebsocketServer.php:202
+    0.0045     393504   3. swoole_websocket_server->start() /Users/tingping/myweb/SimpleChatOnline/WebsocketServer.php:32
+  114.8501     396616   4. WebsocketServer->onMessage() /Users/tingping/myweb/SimpleChatOnline/WebsocketServer.php:32
+
+user : 838881690 closed
+当前在线人数: 0
+user :  closed
+当前在线人数: 0

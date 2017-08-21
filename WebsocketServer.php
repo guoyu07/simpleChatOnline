@@ -44,8 +44,66 @@ class WebsocketServer
             echo 'show count';
         }else{
             //先绑定uid与fd
-            $this->bindUid(['id' => $req->get['id'], 'name' => ''], $req->fd);
+            if(!$this->bindUid(['id' => $req->get['id'], 'name' => ''], $req->fd)){
+                $this->sendToFd($server, $req->fd, 'system', '', 1);
+            }
             $this->showData();
+        }
+    }
+
+    public static $error_no = [
+        0 => 'OK',
+        1 => 'Bind id is online now',
+        2 => 'Your chatter is Offline',
+        3 => 'Your message is empty',
+        4 => 'Your send message is empty',
+        5 => 'Null people is online',
+        6 => 'Do not send message to yourself'
+    ];
+
+    /**
+     * 发送给id
+     *
+     * @param $server
+     * @param $fd
+     * @param $toId
+     * @param $message
+     * @param int $errorCode
+     * @return mixed
+     */
+    public function sendToFd($server, $fd, $toId, $message, $errorCode = 0)
+    {
+        return $server->push($fd, json_encode(
+            [
+                'toid' => $toId,
+                'content' => $message,
+                'code' => $errorCode,
+                'msg' => self::$error_no[$errorCode],
+                'time' => date('Y-m-d H:i:s')
+            ]
+        ));
+    }
+
+    /**
+     * 发送给所有人
+     *
+     * @param $server
+     * @param $message
+     * @param $nowFd
+     */
+    public function sendToAllFd($server, $message, $nowFd)
+    {
+        $i = 0;
+        if (count(self::$uid) > 0) {
+            foreach (self::$uid as $v) {
+                if ($v != $nowFd) {
+                    $i++;
+                    $this->sendToFd($server, $v, 'system', '[System Broadcast]: ' . $message);
+                }
+            }
+            $this->sendToFd($server, $nowFd, 'system', '[System]: 广播发送成功, 成功广播到' . $i . '个用户');
+        }else{
+            $this->sendToFd($server, $nowFd, 'system', '', 5);
         }
     }
 
@@ -54,37 +112,31 @@ class WebsocketServer
         if (!empty($server)) {
             $result = json_decode($frame->data, true);
             if(isset($result['type'])) {
-                if($result['type'] == 'chat') {
-                    if(self::$uidInfo[$this->getUid($frame->fd)]['role'] == 'admin') {
-                        $i = 0;
-                        foreach (self::$uid as $v) {
-                            if($v != $frame->fd) {
-                                $i++;
-                                $server->push($v, json_encode(['toid' => 'system', 'content'=> '[System Broadcast]: '.$result['content']]));
-                            }
+                switch ($result['type']){
+                    case 'chat':
+                        if(empty($result['content'])) {
+                            $this->sendToFd($server, $frame->fd, 'system', '', 3);
                         }
-                        $server->push($frame->fd, json_encode(['toid' => 'system', 'content'=> '[System]: 广播发送成功, 成功广播到'.$i.'个用户']));
-                    }else {
                         //根据前端传递的toid获取要发送到此toid绑定的fd
                         $sendToFd = isset(self::$uid[$result['toid']]) ? self::$uid[$result['toid']] : false;
-                        if ($sendToFd === false) {
-                            $server->push($frame->fd, json_encode(['toid' => 'system', 'content' => '[System]: 对方不在线，请重试']));
-                        } else {
-                            if ($sendToFd == $frame->fd) {
-                                $server->push($frame->fd, json_encode(['toid' => 'system', 'content' => '[System]: 不能给自己发送消息哦！']));
+                        if(self::$uidInfo[$this->getUid($frame->fd)]['role'] == 'admin' && $sendToFd === false) {
+                            $this->sendToAllFd($server, $result['content'], $frame->fd);
+                        }else {
+                            if ($sendToFd === false) {
+                                $this->sendToFd($server, $frame->fd, 'system', '', 2);
                             } else {
-                                if ($result['content']) {
-                                    //发送到此toid的fd中
-                                    $uid = $this->getUid($frame->fd);
-                                    $server->push($sendToFd, json_encode(['toid' => 'id = ' . $uid, 'content' =>  $uid .': ' . $result['content']]));
+                                if ($sendToFd == $frame->fd) {
+                                    $this->sendToFd($server, $frame->fd, 'system', '', 6);
                                 } else {
-                                    $server->push($frame->fd, json_encode(['toid' => 'system', 'content' => '[System]: 发送信息不能为空']));
+                                    //发送到此toid的fd中
+                                    $this->sendToFd($server, $frame->fd, $this->getUid($frame->fd), $result['content']);
                                 }
                             }
                         }
-                    }
-                }elseif ($result['type'] == 'count') {
-                    $server->push($frame->fd, json_encode(['toid' => 'system', 'content' => array_values(array_keys(self::$uid))]));
+                        break;
+                    case 'count':
+                        $this->sendToFd($server, $frame->fd, 'system', array_values(array_keys(self::$uid)));
+                        break;
                 }
             }
         }
@@ -107,11 +159,15 @@ class WebsocketServer
     public function bindUid($uidInfo, $fd)
     {
         $isAdmin = $this->checkAdmin($uidInfo['id']);
+        if(isset(self::$uid[$uidInfo['id']])) {
+            return false;
+        }
         self::$uid[$uidInfo['id']] = $fd;
         self::$uidInfo[$uidInfo['id']] = [
             'role' => $isAdmin,
             'name' => isset($uidInfo['name']) ? $uidInfo['name'] : rand(100000, 999999),
         ];
+        return true;
     }
 
     public function getUid($fd)

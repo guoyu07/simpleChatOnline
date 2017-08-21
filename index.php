@@ -179,16 +179,11 @@ if (!isset($_GET['id']) || empty($_GET['id']) || empty((int)$_GET['id']) ) {
     <div class="main">
         <p>You are <span id="online">Online</span> Now!</p>
         <div>
-            <textarea rows="3" cols="" id="content"
-                      placeholder="<?php if ($isAdmin): ?>What do you want to broadcast<?php else: ?>What do you want to send<?php endif; ?>"></textarea>
+            <textarea rows="3" cols="" id="content" placeholder="<?php if ($isAdmin): ?>What do you want to broadcast<?php else: ?>What do you want to send<?php endif; ?>"></textarea>
         </div>
 
         <div>
-            <?php if ($isAdmin): ?>
-                <input type="hidden" value="" id="toid">
-            <?php else: ?>
-                <input type="text" value="" id="toid" placeholder="to id">
-            <?php endif; ?>
+            <input type="text" value="" id="toid" placeholder="to id">
         </div>
         <div>
             <button onclick="sendMessage()">发送</button>
