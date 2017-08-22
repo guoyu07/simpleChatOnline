@@ -14,6 +14,13 @@
 
       </div>
     </div>
+    
+    <div class="chat-form" v-if="showTab">
+      <el-tabs v-model="nowTabName" type="card" closable @tab-remove="removeTab">
+        <el-tab-pane v-for="(item, index) in tabLists" :key="item.name" :label="item.title" :name="item.name">{{item.content}}</el-tab-pane>
+      </el-tabs>
+    </div>
+
     <div class="form">
       <div class="sendtextarea">
         <div class="user-head"><img :src="user_img" width="60" height="60"></div>
@@ -25,17 +32,12 @@
         <el-button type="primary">发送</el-button>
       </div>
     </div>
-    <div class="chat-form">
-      <el-tabs v-model="nowTabName" type="card" closable @tab-remove="removeTab">
-        <el-tab-pane v-for="(item, index) in tabLists" :key="item.name" :label="item.title" :name="item.name">{{item.content}}</el-tab-pane>
-      </el-tabs>
-    </div>
 
     <el-dialog :title="countPeople" :visible.sync="dialogOnline">
       <el-table :data="gridData">
         <el-table-column label="操作">
           <template scope="scope">
-            <el-button type="text" @click="addTab(nowTabName, scope.row)">开聊</el-button>
+            <el-button v-if="scope.row.show" type="text" @click="addTab(nowTabName, scope.row)">开聊</el-button>
           </template>
         </el-table-column>
         <el-table-column property="username" label="昵称"></el-table-column>
@@ -58,12 +60,23 @@ export default {
       countPeople: '当前在线人数 231 人', // 在线列表显示的标题
       dialogOnline: false, // 是否显示在线列表的弹层
 
-      gridData: [{ username: 'zmisgod', uid: 8288812 }],
+      gridData: [
+        { username: 'zmisgod', uid: 8288812, show: true },
+        { username: 'starzmisgod', uid: 82888123, show: true }
+      ],
 
       oneline_button_size: 72, // 当前用户在线/离线 的switch按钮大小
       nowTabName: '2', // 当前tab name
       tabLists: [], // tab的列表
-      tabIndex: 0 // 总共tab的多少
+      tabIndex: 0, // 总共tab的多少
+      showTab: false
+    }
+  },
+  watch: {
+    tabLists: function (val) {
+      if (this.tabLists.lenth !== 0) {
+        this.showTab = true
+      }
     }
   },
   mounted () {
@@ -77,6 +90,7 @@ export default {
         name: newTabName,
         content: 'chat to ' + row.username
       })
+      row.show = false
       this.nowTabName = newTabName
     },
     removeTab (targetName) {
@@ -154,15 +168,15 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 60px
 }
 
 .el-textarea {
   display: flex;
-  width: 80%;
+  width: 100%;
 }
 
 .send-to-id {
-  padding-right: 7%;
   display: flex;
   margin-top: 10px;
   justify-content: flex-end;
@@ -186,6 +200,15 @@ export default {
 .sendtextarea {
   display: flex;
   flex-direction: row
+}
+
+.chat-form .el-tabs{
+  border-bottom: 1px solid #d1dbe5;
+  padding-bottom: 10px;
+}
+.chat-form .el-tab-pane{
+    overflow-y: scroll;
+    max-height: 200px;
 }
 </style>
 

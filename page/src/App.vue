@@ -64,7 +64,7 @@ header{
   width: 100%;
   height: 30px;
   background-color: #E5E9F2;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   display: flex;
   align-items: center;
