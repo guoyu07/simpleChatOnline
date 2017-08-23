@@ -27,13 +27,12 @@
         <el-input type="textarea" :rows="2" placeholder="请输入内容" v-model="ucontent"></el-input>
       </div>
       <div class="send-to-id">
-        <!-- <el-input class="to-user-id" placeholder="请输入uid" v-model="uid"></el-input> -->
         <el-button type="text" @click="dialogOnline = true">在线列表</el-button>
-        <el-button type="primary">发送</el-button>
+        <el-button type="primary" @click="sendMessage()">发送</el-button>
       </div>
     </div>
 
-    <el-dialog :title="countPeople" :visible.sync="dialogOnline">
+    <el-dialog :title="countPeople" :visible.sync="dialogOnline" size="full">
       <el-table :data="gridData">
         <el-table-column label="操作">
           <template scope="scope">
@@ -52,6 +51,7 @@ export default {
   name: 'chat',
   data () {
     return {
+      socket: {}, // websocket
       online_status: true, // 用户进来默认显示的在线/离线状态
       ucontent: '', // 默认的textarea的内容
       uid: '', // 默认发送给用户的uid
@@ -74,7 +74,7 @@ export default {
   },
   watch: {
     tabLists: function (val) {
-      if (this.tabLists.lenth !== 0) {
+      if (this.tabLists.length !== 0) {
         this.showTab = true
       }
     }
@@ -92,6 +92,7 @@ export default {
       })
       row.show = false
       this.nowTabName = newTabName
+      this.dialogOnline = false
     },
     removeTab (targetName) {
       let tabs = this.tabLists
@@ -108,6 +109,14 @@ export default {
       }
       this.nowTabName = activeName
       this.tabLists = tabs.filter(tab => tab.name !== targetName)
+    },
+    sendMessage () {
+      if (this.tabLists.length === 0) {
+        this.$notify.error({
+          title: '错误',
+          message: '请选择聊天的对象'
+        })
+      }
     }
   }
 }
@@ -139,8 +148,7 @@ export default {
 }
 
 .user-head {
-  width: 80px;
-  height: 80px;
+  padding: 10px;
   border: 1px solid #E5E9F2;
   border-radius: 50%;
   display: flex;

@@ -2,7 +2,7 @@
     <div>
       <el-carousel :interval="5000" arrow="always">
       <el-carousel-item height="400" v-for="item in items" :key="item">
-        <img :src="item" alt="" height="400">
+        <img :src="item" alt="" height="">
       </el-carousel-item>
     </el-carousel>
         <el-button class="letchat" @click="visible = true">let's chat</el-button>
@@ -51,5 +51,8 @@ export default {
 }
 .usex{
   padding: 8px 0;
+}
+img{
+  width: 100%; height: auto;max-width: 100%; display: block;
 }
 </style>
