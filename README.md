@@ -19,17 +19,19 @@ PHP + Swoole + Websocket demo
 ## 使用
 
 1. 在cli模式下运行php WebsocketServer.php
-2. 打开链接：localhost/test/websocket/?id=你的chatid1
-3. 再打开链接：localhost/test/websocket/?id=你的chatid2
-4. 当id=`838881690`时为管理员身份
+2. 打开链接：localhost/?id=yourchatid1
+3. 再打开链接：localhost/?id=yourchatid2
+4. 当id=`838881690`时为管理员身份(可在配置文件中进行相关的配置)
 5. 在文本框中输入你要发送的信息, 在id框中输入你要聊天的用户id，点击发送即可。
-6. 下方为你的聊天记录。（暂不支持离线/历史消息查看）
 
 ***
 
+#### 正在开发
+1. 前端界面优化,使用vue
+2. 在线列表想发给谁点击就发送给谁
+3. 消息保存至服务端，可查看聊天记录
+4. 用户登录
+
 #### 待开发
-5. 在线列表想发给谁点击就发送给谁
-6. 群聊
-7. 断线自动重连
-8. 用户登录
-9. 消息保存至服务端，可查看聊天记录
+2. 群聊
+3. 断线自动重连
