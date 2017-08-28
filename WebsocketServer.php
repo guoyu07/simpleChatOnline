@@ -1,4 +1,6 @@
 <?php
+namespace SimpleChatOnline;
+
 class WebsocketServer
 {
     private $_server;
@@ -20,8 +22,8 @@ class WebsocketServer
         require_once __DIR__.'/config.php';
         $this->config = $config;
 
-        $this->_server = new Swoole\Websocket\Server($this->config['base']['host'], $this->config['base']['port']);
-        $this->_server->set($this->config['swoole']);
+        $this->_server = new Swoole\Websocket\Server($this->config['websocket']['host'], $this->config['websocket']['port']);
+        $this->_server->set($this->config['websocket_set']);
 
         $this->_server->on('Open', [$this, 'onOpen']);
 

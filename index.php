@@ -203,7 +203,7 @@ if (!isset($_GET['id']) || empty($_GET['id']) || empty((int)$_GET['id']) ) {
 </div>
 </body>
 <script type="text/javascript">
-    var socket = new WebSocket('ws://<?php echo $config['base']['host']; ?>:<?php echo $config['base']['port']; ?>?id=<?php echo $_GET['id']; ?>&type=chat')
+    var socket = new WebSocket('ws://<?php echo $config['websocket']['host']; ?>:<?php echo $config['websocket']['port']; ?>?id=<?php echo $_GET['id']; ?>&type=chat')
     // 打开Socket
     socket.onopen = function (event) {
     };
@@ -249,7 +249,7 @@ if (!isset($_GET['id']) || empty($_GET['id']) || empty((int)$_GET['id']) ) {
 </script>
 
 <script>
-    var sockets = new WebSocket('ws://<?php echo $config['base']['host']; ?>:<?php echo $config['base']['port']; ?>?type=count')
+    var sockets = new WebSocket('ws://<?php echo $config['websocket']['host']; ?>:<?php echo $config['websocket']['port']; ?>?type=count')
     // 打开Socket
     sockets.onopen = function (event) {};
     //收到信息
