@@ -40,9 +40,6 @@ class Client
 
     public function onReceive(\Swoole\Client $client, $data)
     {
-        if($data === 'successful') {
-
-        }
     }
 
     public function onClose(\Swoole\Client $client)
