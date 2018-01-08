@@ -2,48 +2,90 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31566070-09bc-4b2e-9187-1e4f408cf345" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/favicon.ico" afterPath="$PROJECT_DIR$/page/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/src/assets/logo.png" afterPath="$PROJECT_DIR$/page/src/assets/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SimpleChatOnline.iml" afterPath="$PROJECT_DIR$/.idea/SimpleChatOnline.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Client.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Coroutine/CoroutlineException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Coroutine/Mysql.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Mysqli.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Server.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Shutdown.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebsocketServer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.babelrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.editorconfig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.eslintignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.eslintrc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.postcssrc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/build.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/check-versions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/dev-client.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/dev-server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/vue-loader.conf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/webpack.base.conf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/webpack.dev.conf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/webpack.prod.conf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/config/dev.env.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/config/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/config/prod.env.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/App.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/assets/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/components/Chat.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/components/Home.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/router/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/swoole.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/swoole_master_pid.pid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/swoole_server.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebsocketServer.php" afterPath="$PROJECT_DIR$/WebsocketServer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.php" afterPath="$PROJECT_DIR$/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/.babelrc" afterPath="$PROJECT_DIR$/page/.babelrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/.editorconfig" afterPath="$PROJECT_DIR$/page/.editorconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/.eslintignore" afterPath="$PROJECT_DIR$/page/.eslintignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/.eslintrc.js" afterPath="$PROJECT_DIR$/page/.eslintrc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/.gitignore" afterPath="$PROJECT_DIR$/page/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/.postcssrc.js" afterPath="$PROJECT_DIR$/page/.postcssrc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/README.md" afterPath="$PROJECT_DIR$/page/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/build/build.js" afterPath="$PROJECT_DIR$/page/build/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/build/check-versions.js" afterPath="$PROJECT_DIR$/page/build/check-versions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/build/dev-client.js" afterPath="$PROJECT_DIR$/page/build/dev-client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/build/dev-server.js" afterPath="$PROJECT_DIR$/page/build/dev-server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/build/utils.js" afterPath="$PROJECT_DIR$/page/build/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/build/vue-loader.conf.js" afterPath="$PROJECT_DIR$/page/build/vue-loader.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/build/webpack.base.conf.js" afterPath="$PROJECT_DIR$/page/build/webpack.base.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/build/webpack.dev.conf.js" afterPath="$PROJECT_DIR$/page/build/webpack.dev.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/build/webpack.prod.conf.js" afterPath="$PROJECT_DIR$/page/build/webpack.prod.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/config/dev.env.js" afterPath="$PROJECT_DIR$/page/config/dev.env.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/config/index.js" afterPath="$PROJECT_DIR$/page/config/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/config/prod.env.js" afterPath="$PROJECT_DIR$/page/config/prod.env.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/index.html" afterPath="$PROJECT_DIR$/page/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/package.json" afterPath="$PROJECT_DIR$/page/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/src/App.vue" afterPath="$PROJECT_DIR$/page/src/App.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/src/components/Chat.vue" afterPath="$PROJECT_DIR$/page/src/components/Chat.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/src/components/Home.vue" afterPath="$PROJECT_DIR$/page/src/components/Home.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/src/main.js" afterPath="$PROJECT_DIR$/page/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/src/router/index.js" afterPath="$PROJECT_DIR$/page/src/router/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/static/.gitkeep" afterPath="$PROJECT_DIR$/page/static/.gitkeep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/swoole.log" afterPath="$PROJECT_DIR$/swoole.log" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,7 +103,71 @@
     <favorites_list name="SimpleChatOnline" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Functionals.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../swoole-ide-helper-master/src/Functionals.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="321" column="9" lean-forward="false" selection-start-line="321" selection-start-column="9" selection-end-line="321" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4641">
+              <caret line="273" column="9" lean-forward="true" selection-start-line="273" selection-start-column="9" selection-end-line="273" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="96">
+                <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="swoole.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/swoole.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebsocketServer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebsocketServer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -75,22 +181,22 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/swoole.log" />
         <option value="$PROJECT_DIR$/page/src/components/Hello.vue" />
         <option value="$PROJECT_DIR$/page/src/main.js" />
         <option value="$PROJECT_DIR$/Utility.php" />
         <option value="$PROJECT_DIR$/Mysql.php" />
         <option value="$PROJECT_DIR$/Mysqli.php" />
-        <option value="$PROJECT_DIR$/Shutdown.php" />
         <option value="$PROJECT_DIR$/Client.php" />
         <option value="$PROJECT_DIR$/WebsocketServer.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Coroutine/CoroutlineException.php" />
         <option value="$PROJECT_DIR$/swoole_master_pid.pid" />
         <option value="$PROJECT_DIR$/Server.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/swoole_server.log" />
         <option value="$PROJECT_DIR$/Coroutine/Mysql.php" />
+        <option value="$PROJECT_DIR$/Shutdown.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/swoole.log" />
       </list>
     </option>
   </component>
@@ -99,9 +205,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/page/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 71">
     <include_path>
@@ -131,6 +234,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -139,14 +244,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.library.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+              <option name="myItemId" value="SimpleChatOnline" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -277,29 +380,40 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36929000" />
+    <option name="totallyTimeSpent" value="37198000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="747" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="747" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20113085" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21405493" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26259542" sideWeight="0.18093699" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26259542" sideWeight="0.819063" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17862596" sideWeight="0.819063" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26259542" sideWeight="0.18093699" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26259542" sideWeight="0.819063" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20113085" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,31 +629,20 @@
     <entry file="file://$PROJECT_DIR$/../swoole-ide-helper-master/src/Websocket/Frame.php" />
     <entry file="file://$PROJECT_DIR$/../swoole-ide-helper-master/src/Websocket/Server.php" />
     <entry file="file://$PROJECT_DIR$/../swoole-ide-helper-master/src/Http/Server.php" />
-    <entry file="file://$PROJECT_DIR$/../swoole-ide-helper-master/src/Functionals.php" />
+    <entry file="file://$PROJECT_DIR$/../swoole-ide-helper-master/src/Functionals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="321" column="9" lean-forward="false" selection-start-line="321" selection-start-column="9" selection-end-line="321" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../swoole-ide-helper-master/src/Server.php" />
     <entry file="file://$PROJECT_DIR$/page/src/components/Hello.vue" />
     <entry file="file://$PROJECT_DIR$/page/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="187">
-            <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Shutdown.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -551,22 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="251" column="111" lean-forward="false" selection-start-line="251" selection-start-column="111" selection-end-line="251" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebsocketServer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="27" column="54" lean-forward="true" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_c.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-161">
@@ -574,10 +661,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swoole.log">
+    <entry file="file://$PROJECT_DIR$/swoole_master_pid.pid">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swoole_server.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -589,60 +685,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Coroutine/Mysql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1118">
-          <caret line="66" column="23" lean-forward="true" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+        <state relative-caret-position="181">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Shutdown.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Mysqli.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="-1444">
           <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebsocketServer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swoole.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="96">
+            <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4641">
+          <caret line="273" column="9" lean-forward="true" selection-start-line="273" selection-start-column="9" selection-end-line="273" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="289">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Coroutine/Mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swoole_master_pid.pid">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swoole_server.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1133">
-          <caret line="176" column="6" lean-forward="true" selection-start-line="176" selection-start-column="6" selection-end-line="176" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="e#35#86#0#PHP" expanded="true" />
-            <marker date="1503897926000" expanded="true" signature="1431:1614" ph="INSERT INTO `crh_train`... " />
-          </folding>
         </state>
       </provider>
     </entry>
