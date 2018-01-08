@@ -1,92 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31566070-09bc-4b2e-9187-1e4f408cf345" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Client.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coroutine/CoroutlineException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coroutine/Mysql.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Mysqli.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Server.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Shutdown.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Utility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebsocketServer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.babelrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.eslintignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.eslintrc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/.postcssrc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/build.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/check-versions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/dev-client.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/dev-server.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/vue-loader.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/webpack.base.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/webpack.dev.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/build/webpack.prod.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/config/dev.env.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/config/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/config/prod.env.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/App.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/assets/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/components/Chat.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/components/Home.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/src/router/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/26.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/27.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/29.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/30.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/31.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/33.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/34.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/35.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/36.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/37.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/38.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/39.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page/static/head/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/swoole.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/swoole_master_pid.pid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/swoole_server.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="31566070-09bc-4b2e-9187-1e4f408cf345" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -127,8 +42,8 @@
       <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+            <state relative-caret-position="272">
+              <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -380,7 +295,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37198000" />
+    <option name="totallyTimeSpent" value="37250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="747" extended-state="0" />
@@ -762,8 +677,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+        <state relative-caret-position="272">
+          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
           <folding />
         </state>
       </provider>
